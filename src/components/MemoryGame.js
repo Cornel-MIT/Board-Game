@@ -7,13 +7,14 @@ const MemoryGame = () => {
   const [flippedCards, setFlippedCards] = useState([]);
   const [gameOver, setGameOver] = useState(false);
 
+  // Fetching cards from the backend
   useEffect(() => {
     const fetchCards = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/cards');
-        console.log(response.data); 
-        setCards(response.data);  
-        setGameOver(false);  
+        console.log(response.data);
+        setCards(response.data);
+        setGameOver(false);  // Reset game over flag when new cards are loaded
       } catch (error) {
         console.error('Error fetching cards:', error);
       }
@@ -22,6 +23,7 @@ const MemoryGame = () => {
     fetchCards();
   }, []); 
 
+  // Effect to handle card flips
   useEffect(() => {
     if (flippedCards.length === 2) {
       const [firstCard, secondCard] = flippedCards;
@@ -38,19 +40,22 @@ const MemoryGame = () => {
           );
         }, 1000);
       }
-      setFlippedCards([]); 
+      setFlippedCards([]); // Clear flipped cards
     }
   }, [flippedCards]);
 
+  // Effect to check if all cards are matched (Game over condition)
   useEffect(() => {
     if (cards.every((card) => card.isMatched)) {
-      setGameOver(true); 
+      setGameOver(true);
     }
-  }, [cards]); 
+  }, [cards]);
 
-  const handleCardClick = (id) => {
+  // Handle card click
+  const handleCardClick = (id) => {    
     setCards((prevCards) =>
       prevCards.map((card) =>
+        
         card.id === id && !card.isFlipped && !card.isMatched
           ? { ...card, isFlipped: true }
           : card
@@ -60,11 +65,25 @@ const MemoryGame = () => {
     setFlippedCards((prev) => [...prev, flippedCard]);
   };
 
+  // Restart the game by resetting the cards and gameOver state
+  const handleRestart = () => {
+    setGameOver(false);
+    setFlippedCards([]);
+    setCards((prevCards) =>
+      prevCards.map((card) => ({
+        ...card,
+        isFlipped: false,
+        isMatched: false,
+      }))
+    );
+  };
+
   return (
     <div className="memory-game">
       {gameOver ? (
         <div className="game-over">
           <h2>Game Over! You won!</h2>
+          <button onClick={handleRestart}>Restart Game</button>
         </div>
       ) : (
         <div className="card-container">

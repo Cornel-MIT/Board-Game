@@ -1,13 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #c24242;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2em;
-    margin: 20px;
-  }
+
   
   .memory-game {
     display: flex;
@@ -40,8 +31,7 @@ body {
   }
   
   .card.flipped .card-inner {
-    transform: rotateY(180deg);
-    background-color: aqua;
+    /* transform: rotateY(180deg); */
   }
   
   .card .card-front,
@@ -56,7 +46,7 @@ body {
   }
   
   .card .card-front {
-    background-color: #fff;
+    background-color: black;
     border: 1px solid #ccc;
     font-size: 3em;
     font-weight: bold;
@@ -71,11 +61,12 @@ body {
   .card-number {
     font-size: 2em;
     font-weight: bold;
+    color: white;
   }
   
   .card-placeholder {
     font-size: 2em;
-    color: #ccc;
+    color: white;
   }
   
   .game-over {
@@ -93,3 +84,7 @@ body {
     height: 100vh;
   }
   
+  /* .card   */
+  .card .card-front  .matched{
+    background-color: aqua !important ;
+  }
