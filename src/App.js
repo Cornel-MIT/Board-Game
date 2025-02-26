@@ -5,7 +5,7 @@ import MemoryGame from './components/MemoryGame';
 function App() {
   return (
     <div className="App">
-      <h1>Memory Game</h1>
+      <h1 className='homePage'>Memory Game</h1>
       <MemoryGame />
     </div>
   );

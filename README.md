@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Memory Game (6x6 Grid)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a memory card game built with React.js for the frontend and Node.js for the backend. The game consists of a 6x6 grid of cards with numbers at the back. The objective is to find matching pairs of numbers.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **6x6 grid of cards**: The game is played with 36 cards arranged in a 6x6 grid.
+- **Memory challenge**: Flip two cards at a time to match the numbers on their backs.
+- **React frontend**: Built with React.js for a dynamic and interactive user interface.
+- **Node.js backend**: Utilizes Node.js to handle server-side logic.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Follow these steps to set up the project locally.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Clone the repository
 
-### `npm run build`
+```bash
+git clone https://github.com/Cornel-MIT/Board-Game
+cd Board-Game
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Install dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Start the server in src/backend:
 
-### `npm run eject`
+```bash
+node index.js
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Start the frontend React application:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Game Rules
 
-## Learn More
+- The grid consists of 36 cards, arranged in a 6x6 layout.
+- Each card has a number on its back.
+- Flip two cards at a time to try and find matching pairs.
+- If the cards match, they remain face-up.
+- If the cards do not match, they flip back face-down.
+- The goal is to match all pairs of cards in the least number of moves.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Frontend**: React.js, CSS
+- **Backend**: Node.js (Express, if used for API)
+- **State Management**: React hooks (`useState`, `useEffect`)
+- **Styling**: Custom CSS for layout and animation

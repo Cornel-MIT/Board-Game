@@ -67,7 +67,7 @@ const MemoryGame = () => {
 
   // Restart the game by resetting the cards and gameOver state
   const handleRestart = () => {
-    setGameOver(false);
+    setGameOver(true);
     setFlippedCards([]);
     setCards((prevCards) =>
       prevCards.map((card) => ({
@@ -83,7 +83,7 @@ const MemoryGame = () => {
       {gameOver ? (
         <div className="game-over">
           <h2>Game Over! You won!</h2>
-          <button onClick={handleRestart}>Restart Game</button>
+          <button className='reset-btn' onClick={handleRestart}>Restart Game</button>
         </div>
       ) : (
         <div className="card-container">

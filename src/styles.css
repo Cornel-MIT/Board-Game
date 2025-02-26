@@ -1,4 +1,8 @@
-
+ .homePage {
+  flex: auto;
+  justify-content: center;
+  text-align: center;
+}
   
   .memory-game {
     display: flex;
